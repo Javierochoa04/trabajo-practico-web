@@ -80,3 +80,28 @@
   </footer>
 </body>
 </html>
+
+<script>
+const form = document.getElementById('form-contacto');
+
+let solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); 
+
+  const nuevaSolicitud = {
+    nombre: document.getElementById('nombre').value,
+    email: document.getElementById('email').value,
+    telefono: document.getElementById('telefono').value,
+    consulta: document.getElementById('mensaje').value
+  };
+
+  solicitudes.push(nuevaSolicitud);
+  localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
+
+  form.reset();
+
+  alert("Solicitud enviada correctamente");
+});
+</script>
+

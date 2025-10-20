@@ -1,13 +1,79 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajo Práctico Web</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T24 Logística</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script.js"></script>
 </head>
+
 <body>
-    <h1>¡Hola GitHub Pages!</h1>
-    <p>Este es mi primer sitio publicado.</p>
+  <header class="hero" id="inicio">
+    <nav class="navbar">
+      <img src="img/logo.png" alt="Logo T24" class="logo">
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-texto">
+      <h1>Transporte y logística permanente</h1>
+      <p>Soluciones integrales para tu negocio en todo el país.</p>
+      <a href="#contacto" class="boton">Contactanos</a>
+    </div>
+  </header>
+
+  <main>
+<section id="nosotros">
+  <h2>Sobre Nosotros</h2>
+  <div class="nosotros-contenido">
+    <div class="columna">
+      <p>
+        Somos una empresa argentina dedicada a la logística de transporte,
+        distribución, almacenamiento y servicios de consultoría para empresas
+        en todo el país. Nuestra experiencia nos permite gestionar de forma
+        integral la cadena de suministro, logrando un equilibrio entre las
+        necesidades de cada cliente y los recursos de la empresa.
+      </p>
+    </div>
+    <div class="columna">
+      <p>
+        Nos destacamos por ofrecer respuestas rápidas, competitivas y seguras.
+        En T24 brindamos soluciones estratégicas que optimizan las redes
+        logísticas, reducen costos y mejoran tiempos, garantizando excelencia
+        operativa y la fidelidad de nuestros clientes.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <section id="contacto" class="contacto">
+      <h2>Contacto</h2>
+      <form id="form-contacto">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 T24 Logística - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>

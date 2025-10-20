@@ -45,14 +45,15 @@ body {
 
 /* Lista de links */
 .nav-links {
-  list-style: none;       /* elimina bullets */
-  display: flex;          /* horizontal en desktop */
+  list-style: none;       
+  display: flex;          
   gap: 1.5rem;
   margin: 0;
 }
 
 .nav-links li {
   margin: 0;
+  padding: 0.5rem 0; 
 }
 
 .nav-links a {
@@ -82,24 +83,28 @@ body {
     right: 0;
     background: var(--amarillo);
     width: 100%;
-    display: none;      /* por defecto oculto */
+    display: none;      
     text-align: center;
     padding: 1rem 0;
   }
 
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+
   .nav-links.active {
-    display: flex;      /* se muestra al tocar hamburguesa */
+    display: flex;      
   }
 
   .nav-toggle {
-    display: block;     /* botón visible en móvil */
+    display: block;     
   }
 }
 
 
 /* === HERO === */
 .hero {
-  background-image: url('../img/hero.png'); /* tu imagen de hero */
+  background-image: url('../img/hero.png'); 
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -109,26 +114,25 @@ body {
   flex-direction: column;
   text-align: center;
   color: var(--blanco);
-  padding: 0 1rem; /* espacio lateral en móviles */
+  padding: 0 1rem; 
 }
 
-/* Texto del hero: transparente, sin fondo */
 .hero-texto h1,
 .hero-texto p {
-  background: none; /* sin fondo */
-  padding: 0;        /* sin padding */
+  background: none; 
+  padding: 0;        
   margin: 0.5rem 0;
 }
 
 /* Botón debajo del texto */
 .hero .boton {
-  background: var(--gris); /* fondo visible solo para el botón */
+  background: var(--gris); 
   color: var(--blanco);
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 1.5rem; /* separa el botón del texto */
+  margin-top: 1.5rem; 
   display: inline-block;
   transition: background 0.3s, color 0.3s;
 }
@@ -180,7 +184,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  flex-wrap: wrap; /* Hace que se adapte en pantallas pequeñas */
+  flex-wrap: wrap; 
   margin-top: 30px;
 }
 
@@ -300,7 +304,7 @@ footer {
 
 /* -------------------- SERVICIOS -------------------- */
 .servicios {
-  background-color: #1b4332; /* mismo verde oscuro que "Nosotros" */
+  background-color: #1b4332; 
   color: white;
   text-align: center;
   padding: 80px 20px;
@@ -309,7 +313,7 @@ footer {
 .servicios h1 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #ffd60a; /* amarillo coherente con el fondo general */
+  color: #ffd60a; 
 }
 
 .servicios-grid {
@@ -374,4 +378,166 @@ footer {
 .btn-contacto:hover {
   background-color: #ffca3a;
   transform: scale(1.05);
+}
+
+/* NAVBAR RESPONSIVE */
+.navbar {
+  background-color: #ffd54f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background-color: #333;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #ffd54f;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ===== Colores base ===== */
+:root {
+  --amarillo: #ffd54f;
+  --gris: #333;
+  --gris-claro: #555;
+  --verde-oscuro: #2c6a4f;
+  --blanco: #fff;
+}
+
+/* ===== Admin Container ===== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  margin: 0;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ===== Tabla de solicitudes ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: var(--blanco);
+  color: var(--gris);
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: var(--amarillo);
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:nth-child(1) { /* Edit */
+  background-color: #4caf50;
+  color: var(--blanco);
+  margin-right: 0.5rem;
+}
+
+button:nth-child(2) { /* Delete */
+  background-color: #f44336;
+  color: var(--blanco);
+}
+
+/* ===== Formulario de edición ===== */
+form#editarForm {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+form#editarForm input,
+form#editarForm textarea {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+form#editarForm button {
+  background-color: var(--amarillo);
+  color: var(--gris);
+  font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  table, th, td {
+    font-size: 0.9rem;
+  }
+
+  form#editarForm {
+    width: 100%;
+    padding: 0 1rem;
+  }
 }

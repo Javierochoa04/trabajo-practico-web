@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  localStorage.removeItem("solicitudes");
   const form = document.getElementById("form-contacto");
   const tablaBody = document.querySelector("#tabla-consultas tbody");
   let solicitudes = JSON.parse(localStorage.getItem("solicitudes")) || [];

@@ -24,29 +24,33 @@ body {
   background-color: var(--amarillo);
 }
 
+:root {
+  --amarillo: #f5d800;  
+  --gris: #333;
+  --gris-claro: #555;
+}
+
 /* === NAVBAR === */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem; /* menos alto */
-  background: var(--amarillo); /* mismo color que el fondo */
+  padding: 0.5rem 2rem; 
+  background: var(--amarillo); 
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* sombra ligera */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Logo */
 .logo {
   width: 100px;
 }
 
-/* Lista de links */
 .nav-links {
-  list-style: none;       
-  display: flex;          
+  list-style: none;
+  display: flex;
   gap: 1.5rem;
   margin: 0;
 }
@@ -66,12 +70,13 @@ body {
   color: var(--gris-claro);
 }
 
-/* Botón hamburguesa (solo visible en móvil) */
+/* Botón hamburguesa */
 .nav-toggle {
   display: none;
   cursor: pointer;
   font-size: 1.8rem;
   color: var(--gris);
+  z-index: 2000;
 }
 
 /* === RESPONSIVE: móvil === */
@@ -79,13 +84,14 @@ body {
   .nav-links {
     flex-direction: column;
     position: absolute;
-    top: 60px; /* debajo de la navbar */
+    top: 60px; 
     right: 0;
     background: var(--amarillo);
     width: 100%;
     display: none;      
     text-align: center;
     padding: 1rem 0;
+    z-index: 1500;
   }
 
   .nav-links a {
@@ -101,6 +107,10 @@ body {
   }
 }
 
+#nosotros,
+#contacto {
+  scroll-margin-top: 70px; 
+}
 
 /* === HERO === */
 .hero {
@@ -124,7 +134,6 @@ body {
   margin: 0.5rem 0;
 }
 
-/* Botón debajo del texto */
 .hero .boton {
   background: var(--gris); 
   color: var(--blanco);
@@ -361,7 +370,6 @@ footer {
   }
 }
 
-/* Botón de contacto en la página de servicios */
 .btn-contacto {
   display: inline-block;
   margin-top: 50px;
@@ -378,69 +386,6 @@ footer {
 .btn-contacto:hover {
   background-color: #ffca3a;
   transform: scale(1.05);
-}
-
-/* NAVBAR RESPONSIVE */
-.navbar {
-  background-color: #ffd54f;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger span {
-  background-color: #333;
-  height: 3px;
-  width: 25px;
-  margin: 4px 0;
-  border-radius: 2px;
-}
-
-/* Responsive navbar */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #ffd54f;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
 }
 
 /* ===== Colores base ===== */

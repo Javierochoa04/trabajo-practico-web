@@ -73,7 +73,26 @@
         <button type="submit">Enviar</button>
       </form>
     </section>
-  </main>
+
+      </section>
+
+  <section id="consultas-lista">
+    <h2>Consultas recibidas</h2>
+
+    <table id="tabla-consultas">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Mensaje</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
 
   <footer>
     <p>© 2025 T24 Logística - Todos los derechos reservados</p>
@@ -81,36 +100,10 @@
 </body>
 </html>
 
-<script>
-const form = document.getElementById('form-contacto');
+  </main>
 
-let solicitudes = JSON.parse(localStorage.getItem('solicitudes')) || [];
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault(); 
-
-  const nuevaSolicitud = {
-    nombre: document.getElementById('nombre').value,
-    email: document.getElementById('email').value,
-    telefono: document.getElementById('telefono').value,
-    consulta: document.getElementById('mensaje').value
-  };
-
-  solicitudes.push(nuevaSolicitud);
-  localStorage.setItem('solicitudes', JSON.stringify(solicitudes));
-
-  form.reset();
-
-  alert("Solicitud enviada correctamente");
-});
-</script>
-<script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
-
+  <footer>
+    <p>© 2025 T24 Logística - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
